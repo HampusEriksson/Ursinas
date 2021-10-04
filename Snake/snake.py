@@ -1,4 +1,3 @@
-from ursina import *
 from UClasses import *
 from random import *
 
@@ -100,6 +99,6 @@ apple = Apple()
 sky = Sky()
 
 camera.position = (boardsize/2,boardsize*3,boardsize/2)
-camera.rotation = Vec3(90, 0, 0)
+camera.rotation = Vec3(90,0, 0)
 
 app.run()

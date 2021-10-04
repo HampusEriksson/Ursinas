@@ -1,6 +1,5 @@
-#testing
+#Classes
 from ursina import *
-from random import *
 
 class Sky(Entity):
     def __init__(self):

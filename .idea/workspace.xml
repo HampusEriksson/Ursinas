@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f2f7172f-405b-450a-aa82-a11540b0ff91" name="Default Changelist" comment="Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/snake.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/UClasses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.start">
+  <component name="RunManager" selected="Python.snake">
     <configuration name="snake" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Ursina" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,8 +68,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.start" />
         <item itemvalue="Python.snake" />
+        <item itemvalue="Python.start" />
       </list>
     </recent_temporary>
   </component>

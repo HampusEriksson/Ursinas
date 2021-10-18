@@ -1,5 +1,6 @@
-from ursina import *
-buttons = []
+import time
+
+
 STARTTIME = time.time()
 seccounter = 1
 

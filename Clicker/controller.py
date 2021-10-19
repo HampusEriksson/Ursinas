@@ -1,33 +1,33 @@
+from constants import *
 import model, view
 
+seccounter = 0
+
 def changetext():
-    print(str(model.getgold()))
     view.counter.text = str(model.getgold())
-    view.addbutton()
+    view.gpsCounter.text = str(model.getgps())
 
 def addgold():
     model.addgold()
 
 def main():
-    print("hej")
     view.setup(addgold)
 
 def update():
-    global player, seccounter, ok
-
+    global seccounter
     stop = time.time()
-    if stop-STARTTIME > seccounter:
-        seccounter +=1
-        ok += 1
-        player.gold += player.gold_per_sec
-    counter.text = str(player.gold)
-    for b in (buttons):
-        if player.gold  >= b.cost:
-            b.disabled = False
-            b.color = color.green
-        else:
-            b.disabled = True
-            b.color = color.red
+    view.timecounter.text = str(round(stop-STARTTIME, 1))
+
+    if model.player.gold_per_sec > 120:
+        seccounter += 1 / 120
+        model.player.gold += model.player.gold_per_sec/120
+
+    if stop-STARTTIME > seccounter and model.player.gold_per_sec != 0:
+        seccounter += 1 / model.player.gold_per_sec
+        model.player.gold += 1
+
+    changetext()
+
 
 if __name__ == '__main__':
     main()

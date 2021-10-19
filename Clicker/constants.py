@@ -1,5 +1,4 @@
-import time
-
+from ursina import *
 
 STARTTIME = time.time()
 seccounter = 1
@@ -15,6 +14,7 @@ class ClickerButton(Button):
         super().__init__()
         self.player = player
         self.cost = cost
+        self.value = int(cost / 10)
         self.x = x
         self.y = y
         self.scale = 0.125
@@ -23,11 +23,21 @@ class ClickerButton(Button):
         self.highlight_color = self.color.tint(.2)
         self.pressed_color = self.color.tint(-.2)
         self.tooltip = Tooltip(
-            f'<gold>Gold Generator\n<default>Earn {self.cost//10} gold every second.\nCosts {self.cost} gold.')
+            f'<gold>Gold Generator\n<default>Earn {self.value} gold every second.\nCosts {self.cost} gold.')
 
     def on_click(self):
 
         if self.player.gold >= self.cost:
             self.player.gold -= self.cost
-            self.player.gold_per_sec += self.cost // 10
+            self.player.gold_per_sec += self.value
+            self.cost = round(self.cost*1.1)
+            self.tooltip.text = f'<gold>Gold Generator\n<default>Earn {self.value} gold every second.\nCosts {self.cost} gold.'
 
+
+    def update(self):
+        if self.player.gold  >= self.cost:
+            self.disabled = False
+            self.color = color.green
+        else:
+            self.disabled = True
+            self.color = color.red

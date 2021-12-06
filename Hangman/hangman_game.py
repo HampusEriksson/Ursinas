@@ -12,11 +12,11 @@ class ClickerButton(Button):
 
     def __init__(self, game, letter, x, y):
         super().__init__()
+        self.text = Text(text=letter, scale=2, x=x-0.025, y=y+0.025)
         self.game = game
         self.letter = letter
         self.x = x
         self.y = y
-        #self.text = Text(text=letter, scale=2, origin=(x, y))
         self.scale = 0.1
         self.disabled = False
         self.highlight_color = self.color.tint(.2)
@@ -36,7 +36,9 @@ class ClickerButton(Button):
 
 class Game():
     def __init__(self):
-        self.word = "HAMPUS"
+        with open('words.txt') as f:
+            lines = f.readlines()
+        self.word = random.choice(lines)
         self.spaces = ["_" for _ in self.word]
         self.wrong_words = []
         self.right_words = []

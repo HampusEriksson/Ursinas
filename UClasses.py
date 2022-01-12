@@ -38,6 +38,7 @@ class Ground(Entity):
             model="cube",
             texture="white_cube",
             color=color.green,
+            collider='box'
         )
 
 class Wall(Entity):

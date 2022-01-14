@@ -38,13 +38,6 @@ player.y = raycast(player.world_position, player.down).world_point[1] + .01
 camera.add_script(SmoothFollow(target=player, offset=[0,5,-30], speed=4))
 
 
-# def update():
-#     print(player.grounded)
-
-# window.size = (window.fullscreen_size[0]//2, window.fullscreen_size[1]//2)
-# window.position = (int(window.size[0]), int(window.size[1]-(window.size[1]/2)))
-# window.borderless = False
-# window.fullscreen = False
 
 input_handler.bind('right arrow', 'd')
 input_handler.bind('left arrow', 'a')

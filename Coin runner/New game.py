@@ -16,13 +16,13 @@ def update():
     updatecount += 1
 
 
-    player.z += speed*time.dt
+    player.position += player.forward
 
     if held_keys["d"]:
-        player.x += speed*time.dt
+        player.rotation_y += 5
 
     if held_keys["a"]:
-        player.x -= speed*time.dt
+        player.rotation_y -= 5
     if updatecount % 60 == 0:
         obstacles.append(Ground(position = (player.x+random.randint(-5,5),player.y,player.z + 10)))
 

@@ -11,12 +11,13 @@ boardsize = 20
 updatecount = 0
 
 def update():
+    print(player.forward)
     global updatecount
     speed = 3 + updatecount*(1/60)
     updatecount += 1
 
 
-    player.position += player.forward
+    player.position += player.forward * time.dt
 
     if held_keys["d"]:
         player.rotation_y += 5
@@ -24,6 +25,7 @@ def update():
     if held_keys["a"]:
         player.rotation_y -= 5
     if updatecount % 60 == 0:
+        player.forward + (random.randint(-5,5),0,10)
         obstacles.append(Ground(position = (player.x+random.randint(-5,5),player.y,player.z + 10)))
 
     for obstacle in obstacles:
